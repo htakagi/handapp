@@ -1,0 +1,47 @@
+<!--ナビバーの設定-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="">GameStatistics.info</a>
+  </div>
+
+  <div class="collapse navbar-collapse target">
+
+    <ul class="nav navbar-nav">
+      <li ><%= link_to "Game", games_path %></li>
+      <li ><%= link_to "Player", players_path %></li>
+      <li ><%= link_to "Tournament", tournaments_path %></li>
+      <li ><%= link_to "Practice", practices_path %></li>
+      <li class="active"><%= link_to "Team", teams_path %></li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<!--表-->
+<div class="container" style="padding:60px 0">
+  <%= form_for @team do |f| %>
+    <p>
+      <%= f.label :"Add Team Name" %><br>
+      <%= f.text_field :name %>
+      <% if @team.errors.any? %>
+      <%= @team.errors.messages[:name][0] %>
+      <% end %>
+
+    </p>
+
+    <p>
+      <%= f.submit class: "btn btn-primary"%>
+    </p>
+
+  <% end %>
+
+</div>

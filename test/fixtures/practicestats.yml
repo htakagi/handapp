@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  practice_id: 
+  player_id: 
+  goal: 1
+  nogoal: 1
+  passmiss: 1
+  catchmiss: 1
+
+two:
+  practice_id: 
+  player_id: 
+  goal: 1
+  nogoal: 1
+  passmiss: 1
+  catchmiss: 1

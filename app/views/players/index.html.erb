@@ -1,0 +1,119 @@
+<!--ナビバーの設定-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="">GameStatistics.info</a>
+  </div>
+
+  <div class="collapse navbar-collapse target">
+
+    <ul class="nav navbar-nav">
+      <li ><%= link_to "Game", games_path %></li>
+      <li class="active"><%= link_to "Player", players_path %></li>
+      <li ><%= link_to "Tournament", tournaments_path %></li>
+      <li ><%= link_to "Practice", practices_path %></li>
+      <li ><%= link_to "Team", teams_path %></li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<!--表-->
+<div class="container" style="padding:60px 0">
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">全選手記録</div>
+
+
+  <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+      <tr><th>Name</th><th>G/S</th><th>%</th><th>6m</th><th>Wing</th> <th>9m</th> <th>7m</th> <th>FB</th> <th>BT</th> <th>AS</th> <th>TF</th> <th>ST</th> <th>BS</th> <th>YC</th> <th>2Min</th> <th>RC</th> <th>DR</th></tr>
+    </thead>
+    <tbody>
+
+      <% @players.each do |player| %>
+      <tr><td><%= player.name %></td>
+        <% @total_sixm_g = 0 %>
+        <% @total_sixm_n = 0 %>
+        <% @total_wing_g = 0 %>
+        <% @total_wing_n = 0 %>
+        <% @total_ninem_g = 0 %>
+        <% @total_ninem_n = 0 %>
+        <% @total_sevenm_g = 0 %>
+        <% @total_sevenm_n = 0 %>
+        <% @total_sevenm_g = 0 %>
+        <% @total_sevenm_n = 0 %>
+        <% @total_FB_g = 0 %>
+        <% @total_FB_n = 0 %>
+        <% @total_BT_g = 0 %>
+        <% @total_BT_n = 0 %>
+        <% @total_AS_n = 0 %>
+        <% @total_TF_n = 0 %>
+        <% @total_ST_n = 0 %>
+        <% @total_BS_n = 0 %>
+        <% @total_YC_n = 0 %>
+        <% @total_twoMin_n = 0 %>
+        <% @total_RC_n = 0 %>
+        <% @total_DR_n = 0 %>
+        <% @total_goal = 0 %>
+        <% @total_shoot = 0 %>
+        <% @gamestats.each do |gamestat| %>
+          <% if gamestat.player_id == player.id %>
+            <% @total_sixm_g = gamestat.sixm_g %>
+            <% @total_sixm_n = gamestat.sixm_n %>
+            <% @total_wing_g = gamestat.wing_g %>
+            <% @total_wing_n = gamestat.wing_n %>
+            <% @total_ninem_g = gamestat.ninem_g %>
+            <% @total_ninem_n = gamestat.ninem_n %>
+            <% @total_sevenm_g = gamestat.sevenm_g %>
+            <% @total_sevenm_n = gamestat.sevenm_n %>
+            <% @total_FB_g = gamestat.FB_g %>
+            <% @total_FB_n = gamestat.FB_n %>
+            <% @total_BT_g = gamestat.BT_g %>
+            <% @total_BT_n = gamestat.BT_n %>
+            <% @total_AS_n = gamestat.AS_n %>
+            <% @total_TF_n = gamestat.TF_n %>
+            <% @total_ST_n = gamestat.ST_n %>
+            <% @total_BS_n = gamestat.BS_n %>
+            <% @total_YC_n = gamestat.YC_n %>
+            <% @total_twoMin_n = gamestat.twoMin_n %>
+            <% @total_RC_n = gamestat.RC_n %>
+            <% @total_DR_n = gamestat.DR_n %>
+            <% @total_goal = gamestat.sixm_g + gamestat.wing_g + gamestat.ninem_g+gamestat.sevenm_g+gamestat.FB_g+ gamestat.BT_g %>
+            <% @total_shoot =  gamestat.sixm_g + gamestat.sixm_n + gamestat.wing_g + gamestat.wing_n + gamestat.ninem_g + gamestat.ninem_n + gamestat.sevenm_g + gamestat.sevenm_n + gamestat.FB_g + gamestat.FB_n + gamestat.BT_g + gamestat.BT_n %>
+          <% end %>
+        <% end %>
+        <td><%= @total_goal %>/<%= @total_shoot %></td>
+        <td><%= (@total_goal.to_f/@total_shoot.to_f * 100).round(2) %> % </td>
+        <td><%=  @total_sixm_g %>/<%=  @total_sixm_g+  @total_sixm_n %></td>
+        <td><%=  @total_wing_g %>/<%=  @total_wing_g+  @total_wing_n %></td>
+        <td><%=  @total_ninem_g %>/<%=  @total_ninem_g+  @total_ninem_n %></td>
+        <td><%=  @total_sevenm_g %>/<%=  @total_sevenm_g+  @total_sevenm_n %></td>
+        <td><%=  @total_FB_g %>/<%=  @total_FB_g+  @total_FB_n %></td>
+        <td><%=  @total_BT_g %>/<%=  @total_BT_g + @total_BT_n %></td>
+        <td><%=  @total_AS_n %></td>
+        <td><%=  @total_TF_n %></td>
+        <td><%=  @total_ST_n %></td>
+        <td><%=  @total_BS_n %></td>
+        <td><%=  @total_YC_n %></td>
+        <td><%=  @total_twoMin_n %></td>
+        <td><%=  @total_RC_n %></td>
+        <td><%=  @total_DR_n %></td>
+        </tr>
+
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
+</div>
+</div>

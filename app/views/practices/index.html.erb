@@ -1,0 +1,61 @@
+<!--ナビバーの設定-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="">GameStatistics.info</a>
+  </div>
+
+  <div class="collapse navbar-collapse target">
+
+    <ul class="nav navbar-nav">
+      <li ><%= link_to "Game", games_path %></li>
+      <li ><%= link_to "Player", players_path %></li>
+      <li ><%= link_to "Tournament", tournaments_path %></li>
+      <li class="active"><%= link_to "Practice", practices_path %></li>
+      <li ><%= link_to "Team", teams_path %></li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<!--表-->
+<div class="container" style="padding:60px 0">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">全練習メニュー</div>
+
+    <!-- Table -->
+      <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+          <tr><th>練習</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><%= link_to "3on3", players_path %></td></tr>
+          <tr><td><%= link_to "2on2", players_path %></td></tr>
+          <tr><td><%= link_to "2on1", players_path %></td></tr>
+        </tbody>
+      </table>
+
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">追加</a></li>
+      <li><a href="#">編集</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">削除</a></li>
+    </ul>
+  </div>
+
+</div>

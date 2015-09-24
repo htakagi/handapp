@@ -1,0 +1,41 @@
+<!--ナビバーの設定-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="">GameStatistics.info</a>
+  </div>
+
+  <div class="collapse navbar-collapse target">
+
+    <ul class="nav navbar-nav">
+      <li><a href="">Game</a></li>
+      <li class="active"><a href="">Player</a></li>
+      <li ><a herf="">Tournament</a></li>
+      <li ><a herf="">Practice</a></li>
+      <li ><a herf="">Team</a></li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<!--表-->
+<div class="container" style="padding:60px 0">
+  <table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+      <tr><th>Name</th><th>G/S</th><th>%</th><th>6m</th><th>Wing</th> <th>9m</th> <th>7m</th> <th>FB</th> <th>BT</th> <th>AS</th> <th>TF</th> <th>ST</th> <th>BS</th> <th>YC</th> <th>2Min</th> <th>RC</th> <th>DR</th></tr>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %>
+      <tr><td><%= player.name %></td><td>200</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

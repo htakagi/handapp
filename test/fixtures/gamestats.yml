@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  game_id: 
+  player_id: 
+  sixm_g: 1
+  sixm_n: 1
+  wing_g: 1
+  wing_n: 1
+  ninem_g: 1
+  ninem_n: 1
+  sevenm_g: 1
+  sevenm_n: 1
+  FB_n: 1
+  BT_g: 1
+  BT_n: 1
+  AS_n: 1
+  TF_n: 1
+  ST_n: 1
+  BS_n: 1
+  YC_n: 1
+  twoMin_n: 1
+  RC_n: 1
+  DR_n: 1
+
+two:
+  name: MyString
+  game_id: 
+  player_id: 
+  sixm_g: 1
+  sixm_n: 1
+  wing_g: 1
+  wing_n: 1
+  ninem_g: 1
+  ninem_n: 1
+  sevenm_g: 1
+  sevenm_n: 1
+  FB_n: 1
+  BT_g: 1
+  BT_n: 1
+  AS_n: 1
+  TF_n: 1
+  ST_n: 1
+  BS_n: 1
+  YC_n: 1
+  twoMin_n: 1
+  RC_n: 1
+  DR_n: 1

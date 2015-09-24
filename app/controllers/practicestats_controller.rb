@@ -1,0 +1,2 @@
+class PracticestatsController < ApplicationController
+end
