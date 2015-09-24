@@ -30,7 +30,7 @@
 <div class="container" style="padding:60px 0">
   <%= form_for @team do |f| %>
     <p>
-      <%= f.label :"Add Team Name" %><br>
+      <%= f.label :"Edit Team Name" %><br>
       <%= f.text_field :name %>
       <% if @team.errors.any? %>
       <%= @team.errors.messages[:name][0] %>
